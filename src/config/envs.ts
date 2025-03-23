@@ -6,6 +6,9 @@ interface EnvVars {
   PORT: number;
   NATS_SERVERS: string[];
   STRIPE_SECRET: string;
+  STRIPE_CANCEL_URL: string;
+  STRIPE_SUCCESS_URL: string;
+  STRIPE_ENDPOINTSECRET: string;
 }
 
 const envsSchema = joi
@@ -13,6 +16,9 @@ const envsSchema = joi
     PORT: joi.number().required(),
     // NATS_SERVERS: joi.array().items(joi.string()).required(),
     STRIPE_SECRET: joi.string().required(),
+    STRIPE_CANCEL_URL: joi.string().required(),
+    STRIPE_SUCCESS_URL: joi.string().required(),
+    STRIPE_ENDPOINTSECRET: joi.string().required(),
   })
   .unknown(true);
 
@@ -31,4 +37,7 @@ export const envs = {
   port: envVars.PORT,
   // NATS_SERVERS: envVars.NATS_SERVERS,
   STRIPE_SECRET: envVars.STRIPE_SECRET,
+  STRIPE_CANCEL_URL: envVars.STRIPE_CANCEL_URL,
+  STRIPE_SUCCESS_URL: envVars.STRIPE_SUCCESS_URL,
+  STRIPE_ENDPOINTSECRET: envVars.STRIPE_ENDPOINTSECRET,
 };
