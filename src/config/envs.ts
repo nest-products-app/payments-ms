@@ -14,7 +14,7 @@ interface EnvVars {
 const envsSchema = joi
   .object({
     PORT: joi.number().required(),
-    // NATS_SERVERS: joi.array().items(joi.string()).required(),
+    NATS_SERVERS: joi.array().items(joi.string()).required(),
     STRIPE_SECRET: joi.string().required(),
     STRIPE_CANCEL_URL: joi.string().required(),
     STRIPE_SUCCESS_URL: joi.string().required(),
@@ -35,7 +35,7 @@ const envVars: EnvVars = value;
 
 export const envs = {
   port: envVars.PORT,
-  // NATS_SERVERS: envVars.NATS_SERVERS,
+  NATS_SERVERS: envVars.NATS_SERVERS,
   STRIPE_SECRET: envVars.STRIPE_SECRET,
   STRIPE_CANCEL_URL: envVars.STRIPE_CANCEL_URL,
   STRIPE_SUCCESS_URL: envVars.STRIPE_SUCCESS_URL,
