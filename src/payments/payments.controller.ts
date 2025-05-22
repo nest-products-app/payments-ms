@@ -13,7 +13,7 @@ export class PaymentsController {
   createPaymentSession(@Payload() paymentSessionDto: PaymentSessionDto) {
     return this.paymentsService.createPaymentSession(paymentSessionDto);
   }
-
+  // prueba
   @Get('success')
   success() {
     return {
